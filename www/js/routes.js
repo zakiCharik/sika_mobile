@@ -163,6 +163,7 @@ var routes = [
     componentUrl: './pages/login-screen.html',
   },
   {
+    name: 'login',
     path: '/login-screen-page/',
     componentUrl: './pages/login-screen-page.html',
   },

@@ -1,6 +1,6 @@
 # sikaMobile
 
-> A sample Apache Cordova application integrated with Framework7.
+> LOYALTY REWARD SOLUTION
 
 ## App Dev
 Like you would any corodova app

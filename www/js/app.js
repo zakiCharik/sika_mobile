@@ -20,6 +20,22 @@ var app = new Framework7({
       },
     };
   },
+  on: {
+    pageInit: function () {
+      console.log('in user checking logged');
+      var userid = window.localStorage.getItem('ls_userid');
+      console.log(userid);
+      if (userid !== undefined) {
+        return userid;
+      }      
+      else{
+        router.navigate({
+          name: 'login',
+          params: { userId: userid, postId: 2 },
+        });
+      }
+    }
+  },
   methods: {
     helloWorld: function () {
       app.dialog.alert('Hello World!');
