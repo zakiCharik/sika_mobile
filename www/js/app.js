@@ -9,7 +9,7 @@ if (document.location.search.indexOf('theme=') >= 0) {
 
 // Init App
 var app = new Framework7({
-  id: 'io.framework7.testapp',
+  id: 'com.lineinteractive.ma',
   root: '#app',
   theme: theme,
   data: function () {
@@ -22,18 +22,16 @@ var app = new Framework7({
   },
   on: {
     pageInit: function () {
-      console.log('in user checking logged');
-      var userid = window.localStorage.getItem('ls_userid');
-      console.log(userid);
-      if (userid !== undefined) {
-        return userid;
-      }      
-      else{
-        router.navigate({
-          name: 'login',
-          params: { userId: userid, postId: 2 },
-        });
-      }
+        console.log('in user checking logged');
+        console.log(document.location.pathname);
+        var userid = window.localStorage.getItem('ls_userid');
+        console.log(userid);
+        if (userid !== undefined) {
+          return userid;
+        }      
+        else{
+          router.navigate({name: '/login/'});
+        }
     }
   },
   methods: {
