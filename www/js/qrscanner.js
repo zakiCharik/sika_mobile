@@ -5,10 +5,13 @@ var onDone = function(err, status){
   if (err) {
    // here we can handle errors and clean up any loose ends.
    console.error(err);
+   alert(err);
   }
   if (status.authorized) {
     // W00t, you have camera access and the scanner is initialized.
-      // window.QRscanner.show() should feel very fast.
+    window.QRscanner.show(function(status){
+      console.log(status);
+    }); //should feel very fast.
 
 
     // Make the webview transparent so the video preview is visible behind it.
