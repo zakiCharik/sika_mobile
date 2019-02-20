@@ -34,7 +34,7 @@ function displayContents(err, text){
     // an error occurred, or the scan was canceled (error code `6`)
   } else {
     // The scan completed, display the contents of the QR code:
-    alert(text);
+    alert('SCANNED content : '+text);
   }
 }
 
@@ -48,8 +48,12 @@ function loadQRScanner(){
 
   window.QRScanner.prepare(onDone); // show the prompt
 
+}
+
+
+function scanner(){
+
   // Start a scan. Scanning will continue until something is detected or
   // `window.QRScanner.cancelScan()` is called.
-  window.QRScanner.scan(displayContents);
-
+  window.QRScanner.scan(displayContents);  
 }
