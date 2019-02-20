@@ -8,18 +8,18 @@
   <meta name="theme-color" content="#2196f3">
   <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: blob:">
   <title>SIKA - Rewarding Loyalty Mobile application</title>
-  <link rel="stylesheet" href="./lib/css/framework7.css">
-  <link rel="stylesheet" href="css/app.css">
-  <link rel="apple-touch-icon" href="img/f7-icon-square.png">
-  <link rel="icon" href="img/f7-icon.png">
-  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href=".././lib/css/framework7.css">
+  <link rel="stylesheet" href="../css/app.css">
+  <link rel="apple-touch-icon" href="../img/f7-icon-square.png">
+  <link rel="icon" href="../img/f7-icon.png">
+  <link rel="stylesheet" href="../css/custom.css">
   <style type="text/css">
     html , body, #app, .page, .page-content {
         background: none !important;
     }    
   </style>
 </head>
-<body onload="loadQRScanner()">
+<body onload="scanner()">
   <div id="app">
     <div class="statusbar"></div>
     <div class="view view-main view-init ios-edges" data-url="/">
@@ -53,12 +53,12 @@
   </div>
 
   <!-- cordova library -->
-  <script type="text/javascript" src="cordova.js"></script>
+  <script type="text/javascript" src="../cordova.js"></script>
   
-  <script src="./lib/js/framework7.js"></script>
-  <script src="js/routes.js"></script>
-  <script src="js/app.js"></script>
-  <script src="js/qrscanner.js"></script>
+  <script src=".././lib/js/framework7.js"></script>
+  <script src="../js/routes.js"></script>
+  <script src="../js/app.js"></script>
+  <script src="../js/qrscanner.js"></script>
 
 </body>
 </html>

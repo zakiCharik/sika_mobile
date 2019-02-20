@@ -56,14 +56,17 @@ var loadQRScanner = function(){
 }
 
 
-var scanner = function (){
-
-  // Start a scan. Scanning will continue until something is detected or
-  // `window.QRScanner.cancelScan()` is called.
-  alert('window.QR');
-  window.QRScanner.scan(displayContents);  
-  alert('QR only');
-  QRScanner.scan(displayContents);  
+var scanner = function(){
+    // W00t, you have camera access and the scanner is initialized.
+    QRscanner.show(function(status){
+      // Start a scan. Scanning will continue until something is detected or
+      // `window.QRScanner.cancelScan()` is called.
+      alert('window.QR');
+      window.QRScanner.scan(displayContents);  
+      alert('QR only');
+      QRScanner.scan(displayContents);
+    }); //should feel very fast.
+  
 }
 
 
