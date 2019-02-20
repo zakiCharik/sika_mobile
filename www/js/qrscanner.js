@@ -1,8 +1,7 @@
 
-document.addEventListener("deviceready", loadQRScanner(), false);
 
 
-function onDone(err, status){
+var onDone = function(err, status){
   if (err) {
    // here we can handle errors and clean up any loose ends.
    console.error(err);
@@ -13,7 +12,7 @@ function onDone(err, status){
 
 
     // Make the webview transparent so the video preview is visible behind it.
-    window.QRScanner.show(function(status){
+    QRScanner.show(function(status){
       console.log(status);
     });
     // Be sure to make any opaque HTML elements transparent here to avoid
@@ -29,31 +28,39 @@ function onDone(err, status){
   }
 } 
 
-function displayContents(err, text){
+var displayContents = function(err, text){
   if(err){
     // an error occurred, or the scan was canceled (error code `6`)
+    alert('an error occurred, or the scan was canceled : '+err);
+    console.log(err);
   } else {
     // The scan completed, display the contents of the QR code:
     alert('SCANNED content : '+text);
+    console.log(text);
   }
 }
 
-function loadQRScanner(){
+var loadQRScanner = function(){
 
   // For the best user experience, make sure the user is ready to give your app
   // camera access before you show the prompt. On iOS, you only get one chance.
   console.info('First Call to Qr Scanner');
 
-  console.log(window.QRScanner);
+  console.log(QRScanner);
 
-  window.QRScanner.prepare(onDone); // show the prompt
+  QRScanner.prepare(onDone); // show the prompt
 
 }
 
 
-function scanner(){
+var scanner = function (){
 
   // Start a scan. Scanning will continue until something is detected or
   // `window.QRScanner.cancelScan()` is called.
-  window.QRScanner.scan(displayContents);  
+  QRScanner.scan(displayContents);  
 }
+
+
+// waiting for the device to be ready
+// Cordova Ready event listner
+document.addEventListener("deviceready", loadQRScanner(), false);
