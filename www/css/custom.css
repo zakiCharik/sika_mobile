@@ -1,7 +1,59 @@
+
+/**/
+.text-center{
+    text-align: center !important;
+}
+._no-padding{
+    padding: 0 !important;
+}
+/**/
+
+/*IOS*/
+.ios body {
+    color: #fff !important;
+}
+.ios-list ul {
+    width: 90%  !important;
+    background: transparent !important;
+    margin: auto !important;
+}
+.ios .list .list-button {
+    padding: 0 !important;
+    margin: 25px 0px !important;
+}
+
 .ios .list .item-content {
     min-height: 44px !important;
     padding-left: 0 !important;
     margin-bottom: 15px !important;
+}
+
+.ios .list .list-button {
+    padding: 0 !important;
+}
+
+.ios .navbar:after {
+    background: transparent !important;
+    top: 0 !important; 
+}
+
+
+
+/*material design*/
+.md .navbar .title {
+    margin: auto !important;
+    text-align: center !important;
+    font-weight: 900 !important;
+}
+
+.md .navbar .title {
+    margin: auto !important;
+    text-align: center !important;
+    font-weight: 900 !important;
+}
+.md .navbar:after {
+    background: transparent !important;
+    top: 0 !important; 
 }
 .md .list .item-content {
     min-height: 44px !important;
@@ -15,10 +67,6 @@
     line-height: 48px;
 }
 
-.ios .list .list-button {
-    padding: 0 !important;
-}
-
 .md .item-input-wrap .input-addon-button {
     background-color: #4ab5ae !important;
     margin-top: 0;
@@ -26,17 +74,22 @@
 }
 
 .md .input-addon-button {
-    width: 35px;
+    width: 46px;
     height: 100%;
     color: white;
     background-color: #4ab5ae !important;
 }
 .input-addon-button {
     background-color: #4ab5ae !important;
-    width: 40px;
+    width: 46px;
     height: 100%;
     left: 0;
     position: absolute;
+}
+.input-addon-button img{
+    width: fit-content;
+    padding: 5px 0px;
+    margin: 1px 11px;
 }
 ._fs-33{
     font-size: 33px;    
@@ -51,16 +104,17 @@
 ._brand{
     width: 50%;
     margin: auto;
-    padding: 19%;    
+    padding: 13%;    
 }
 ._button-forgot{
     text-align: center;
     padding: 10px;
     font-size: 13px !important;
-    color: #869dbf !important;    
+    color: white !important;    
 }
 
 ._button-sign{
+    height: 44px !important;
     width: 100% !important;
     color: white !important;
     background-color: #4ab5ad !important;  
@@ -85,7 +139,7 @@
 input{
     width: 100% !important;
     background-color: #788dad !important;
-    padding: 10px !important;
+    padding: 23px !important;
     color: white !important;
 }
 input:placeholder{
@@ -101,4 +155,17 @@ input::placeholder {
 .list70{
     width: 70%;
     margin: auto 15.7% !important;
+}
+
+._nav-support{
+    position: absolute;
+    width: 20%;
+    bottom: 0 !important;
+    margin: 48px 40%;   
+}
+
+.user-face{
+    border: 2px #4ab5ad solid;
+    padding: 5px;
+    border-radius: 100%;
 }

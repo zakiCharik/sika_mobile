@@ -7,17 +7,18 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="theme-color" content="#2196f3">
   <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: blob:">
-  <title>Framework7</title>
+  <title>SIKA - Rewarding Loyalty Mobile application</title>
   <link rel="stylesheet" href="./lib/css/framework7.css">
   <link rel="stylesheet" href="css/app.css">
   <link rel="apple-touch-icon" href="img/f7-icon-square.png">
   <link rel="icon" href="img/f7-icon.png">
+  <link rel="stylesheet" href="css/custom.css">
 </head>
 <body>
   <div id="app">
     <div class="statusbar"></div>
     <div class="panel panel-left panel-cover">
-      <div class="page">
+      <div class="page" data-name="left" name="left">
         <div class="page-content">
           <div class="block-title">Left Panel</div>
           <div class="block">
@@ -27,31 +28,7 @@
           <div class="list links-list">
             <ul>
               <li>
-                <a href="/accordion/" class="panel-close">Accordion</a>
-              </li>
-              <li>
-                <a href="/action-sheet/" class="panel-close">Action Sheet</a>
-              </li>
-              <li>
-                <a href="/badge/" class="panel-close">Badge</a>
-              </li>
-              <li>
-                <a href="/buttons/" class="panel-close">Buttons</a>
-              </li>
-              <li>
-                <a href="/cards/" class="panel-close">Cards</a>
-              </li>
-              <li>
-                <a href="/checkbox/" class="panel-close">Checkbox</a>
-              </li>
-              <li>
-                <a href="/chips/" class="panel-close">Chips/Tags</a>
-              </li>
-              <li>
-                <a href="/contacts-list/" class="panel-close">Contacts List</a>
-              </li>
-              <li>
-                <a href="/data-table/" class="panel-close">Data Table</a>
+                <a href="#" class="panel-close">Accordion</a>
               </li>
             </ul>
           </div>
@@ -91,31 +68,43 @@
           <div class="navbar-inner">
             <div class="left">
               <a href="#" class="link icon-only panel-open" data-panel="left">
-                <i class="icon f7-icons ios-only">menu</i>
-                <i class="icon material-icons md-only">menu</i>
+                <img src="img/logout.png">
+              </a>
+              <a href="#" class="link icon-only panel-open _no-padding"  data-panel="left">
+                <img src="img/person.png">
               </a>
             </div>
-            <div class="title sliding">SIKA</div>
+            <div class="title sliding">MON PROFIL</div>
+            <div class="left">
+
+            </div>            
             <div class="right">
-              <a class="link icon-only searchbar-enable" data-searchbar=".searchbar-components">
-                <i class="icon f7-icons ios-only">search_strong</i>
-                <i class="icon material-icons md-only">search</i>
+              <a href="#" class="link icon-only panel-open" data-panel="right">
+                <img src="img/gear.png">
               </a>
             </div>
-            <form data-search-container=".components-list" data-search-in="a" class="searchbar searchbar-expandable searchbar-components searchbar-init">
-              <div class="searchbar-inner">
-                <div class="searchbar-input-wrap">
-                  <input type="search" placeholder="Search components"/>
-                  <i class="searchbar-icon"></i>
-                  <span class="input-clear-button"></span>
-                </div>
-                <span class="searchbar-disable-button">Cancel</span>
-              </div>
-            </form>
           </div>
         </div>
         <div class="page-content">
-
+            <div class="text-center ">
+                  <img class="user-face" src="https://cdn.framework7.io/placeholder/people-100x100-7.jpg">
+            </div>
+            <div class="_user_info text-center">
+              
+            </div>
+            <div class="_score text-center">
+                
+            </div>
+            <div class="list ios-list">
+              <ul>
+                <li><a href="#" class=" item-link list-button _button-sign text-center"   >SCANNER UN CODE</a></li>
+                <li><a href="#" class=" item-link list-button _button-sign text-center"   >CONVERTIR MES POINTS</a></li>
+                <li><a href="#" class=" item-link list-button _button-sign text-center"   >MES SCANS</a></li>
+              </ul>              
+            </div>
+            <DIV class="_nav-support">
+              <img src="img/support.png">
+            </DIV>
         </div>
       </div>
     </div>
