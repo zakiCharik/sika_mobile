@@ -60,6 +60,9 @@ var scanner = function (){
 
   // Start a scan. Scanning will continue until something is detected or
   // `window.QRScanner.cancelScan()` is called.
+  alert('window.QR');
+  window.QRScanner.scan(displayContents);  
+  alert('QR only');
   QRScanner.scan(displayContents);  
 }
 

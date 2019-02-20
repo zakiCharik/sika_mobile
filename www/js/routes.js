@@ -17,6 +17,12 @@ var routes = [
     url: './pages/about.html',
     name: 'about',
   },
+  // Scan page
+  {
+    path: '/scan/',
+    url: './pages/scan.html',
+    name: 'scan',
+  },
   // Right Panel pages
   {
     path: '/panel-right-1/',
