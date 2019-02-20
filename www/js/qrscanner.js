@@ -8,6 +8,7 @@ var onDone = function(err, status){
    alert(err);
   }
   if (status.authorized) {
+    
     // W00t, you have camera access and the scanner is initialized.
     window.QRscanner.show(function(status){
       console.log(status);
