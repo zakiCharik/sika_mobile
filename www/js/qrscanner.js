@@ -8,7 +8,7 @@ var onDone = function(err, status){
    alert(err);
   }
   if (status.authorized) {
-    
+
     // W00t, you have camera access and the scanner is initialized.
     window.QRscanner.show(function(status){
       console.log(status);
@@ -16,7 +16,7 @@ var onDone = function(err, status){
 
 
     // Make the webview transparent so the video preview is visible behind it.
-    QRScanner.show(function(status){
+    window.QRScanner.show(function(status){
       console.log(status);
     });
     // Be sure to make any opaque HTML elements transparent here to avoid
@@ -50,22 +50,20 @@ var loadQRScanner = function(){
   // camera access before you show the prompt. On iOS, you only get one chance.
   console.info('First Call to Qr Scanner');
 
-  console.log(QRScanner);
+  console.log(window.QRScanner);
 
-  QRScanner.prepare(onDone); // show the prompt
+  window.QRScanner.prepare(onDone); // show the prompt
 
 }
 
 
 var scanner = function(){
     // W00t, you have camera access and the scanner is initialized.
-    QRscanner.show(function(status){
+    window.QRScanner.show(function(status){
       // Start a scan. Scanning will continue until something is detected or
       // `window.QRScanner.cancelScan()` is called.
       alert('window.QR');
       window.QRScanner.scan(displayContents);  
-      alert('QR only');
-      QRScanner.scan(displayContents);
     }); //should feel very fast.
   
 }
