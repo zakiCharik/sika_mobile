@@ -9,6 +9,40 @@
     </author>
     <content src="login.html" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="StatusBarBackgroundColor" value="546e8d" />
+    <preference name="AndroidPersistentFileLocation" value="Compatibility" />
+    <platform name="android">
+        <icon density="ldpi" src="icons/android-icon-144x144.png" />
+        <icon density="mdpi" src="icons/android-icon-144x144.png" />
+        <icon density="hdpi" src="icons/android-icon-144x144.png" />
+        <icon density="xhdpi" src="icons/android-icon-144x144.png" />
+        <icon density="xxhdpi" src="icons/android-icon-72x72.png" />
+        <icon density="xxxhdpi" src="icons/android-icon-72x72.png" />
+        <splash density="land-ldpi" src="icons/android-icon-144x144.png" />
+        <splash density="land-mdpi" src="icons/android-icon-144x144.png" />
+        <splash density="land-hdpi" src="icons/android-icon-144x144.png" />
+        <splash density="land-xhdpi" src="icons/android-icon-144x144.png" />
+        <splash density="land-xxhdpi" src="icons/android-icon-144x144.png" />
+        <splash density="land-xxxhdpi" src="icons/android-icon-144x144.png" />
+        <splash density="port-ldpi" src="icons/android-icon-144x144.png" />
+        <splash density="port-mdpi" src="icons/android-icon-144x144.png" />
+        <splash density="port-hdpi" src="icons/android-icon-144x144.png" />
+        <splash density="port-xhdpi" src="icons/android-icon-144x144.png" />
+        <splash density="port-xxhdpi" src="icons/android-icon-144x144.png" />
+        <splash density="port-xxxhdpi" src="icons/android-icon-144x144.png" />
+    </platform>
+    <platform name="ios">
+        <icon height="180" platform="ios" src="icons/apple-icon-180x180.png" width="180" />
+        <icon height="152" platform="ios" src="icons/apple-icon-152x152.png" width="152" />
+        <icon height="144" platform="ios" src="icons/apple-icon-144x144.png" width="144" />
+        <icon height="120" platform="ios" src="icons/apple-icon-120x120.png" width="120" />
+        <icon height="114" platform="ios" src="icons/apple-icon-114x114.png" width="114" />
+        <icon height="76" platform="ios" src="icons/apple-icon-76x76.png" width="76" />
+        <icon height="72" platform="ios" src="icons/apple-icon-72x72.png" width="72" />
+        <icon height="60" platform="ios" src="icons/apple-icon-60x60.png" width="60" />
+        <icon height="57" platform="ios" src="icons/apple-icon-57x57.png" width="57" />
+    </platform>
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
