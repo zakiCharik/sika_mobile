@@ -1,4 +1,6 @@
-
+.list li {
+    margin: 3px auto !important;
+}
 /**/
 .text-center{
     text-align: center !important;
@@ -6,20 +8,40 @@
 ._no-padding{
     padding: 0 !important;
 }
+._no-margin{
+    margin: 0 !important;
+}
+._no-bolder{
+    font-weight: 400;
+}
+._bolder{
+    font-weight: bold;
+}
+._font19{
+    font-size: 19px;
+}
+._font23{
+    font-size: 23px;
+}
 /**/
 
 /*IOS*/
+.ios .list ul:after, .ios .list ul:before {
+     height: 0px !important; 
+}
+
 .ios body {
     color: #fff !important;
 }
 .ios-list ul {
+    color: white;
     width: 90%  !important;
     background: transparent !important;
     margin: auto !important;
 }
 .ios .list .list-button {
     padding: 0 !important;
-    margin: 25px 0px !important;
+    margin: 5px 0px !important;
 }
 
 .ios .list .item-content {
@@ -40,6 +62,9 @@
 
 
 /*material design*/
+.md .list ul:after, .ios .list ul:before {
+     height: 0px !important; 
+}
 .md .navbar .title {
     margin: auto !important;
     text-align: center !important;
@@ -60,7 +85,9 @@
     padding-left: 0 !important;
     margin-bottom: 15px !important;
 }
-
+.md .ios-list{
+    margin: 10px 0 !important;
+}
 .md .list .list-button {
     padding: 0 !important;
     font-size: 16px;
@@ -158,10 +185,10 @@ input::placeholder {
 }
 
 ._nav-support{
-    position: absolute;
+    position: relative;
     width: 20%;
     bottom: 0 !important;
-    margin: 48px 40%;   
+    margin: 0px 40%;   
 }
 
 .user-face{
