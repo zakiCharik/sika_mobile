@@ -6,7 +6,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="theme-color" content="#2196f3">
-  <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap: blob:">
+  <meta http-equiv="Content-Security-Policy" content="default-src *; child-src * 'self' blob: polyblob: http:; img-src * 'self' data: http:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src 'self' 'unsafe-inline' *; media-src * blob: polyblob:">
+
   <title>SIKA - Rewarding Loyalty Mobile application</title>
   <link rel="stylesheet" href="./lib/css/framework7.css">
   <link rel="stylesheet" href="css/app.css">
@@ -21,7 +22,7 @@
 
   </style>
 </head>
-<body>
+<body style="background-color: transparent !important;">
   <div id="app">
     <div class="statusbar"></div>
     <div class="view view-main" data-url="/login">

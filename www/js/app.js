@@ -22,9 +22,12 @@ var app = new Framework7({
     };
   },
   on: {
-    pageInit: function () {
-
-
+    pageAfterIn: function() {
+       app.view.main.history.pop();
+       $$('.page-previous, .navbar-previous').remove();
+    }, pageInit: function(){
+       app.view.main.history.pop();
+       $$('.page-previous, .navbar-previous').remove();
     }
   },
   methods: {
@@ -40,7 +43,8 @@ var app = new Framework7({
 
 // Init/Create main view
 var mainView = app.views.create('.view-main', {
-  url: '/'
+  url: '/',
+  preloadPreviousPage: false
 });
 
 
@@ -56,18 +60,26 @@ $$('._button-sign').on('click', function () {
   mainView.router.load({url: 'index.html' , ignoreCache: true, reload: true }); 
   mainView.router.refreshPage();
 
-  // app.router.navigate('/',
-  //   {
-  //     url: '/',
-  //     name: 'homepage',
-  //     params: { 
-  //       username: $$('#sika-username-2').val(), 
-  //       password: $$('#sika-password-2').val()
-  //     }
-  //     // ,
-  //     // force: true, 
-  //     // ignoreCache: true
-  //   }
-  // );
-
 });
+
+
+
+
+// Option 2. Using live 'page:init' event handlers for each page
+$$(document).on('page:init', '.page[data-name="scan-page"]', function (e) {
+  if (window.QRScanner !== undefined) {
+    console.log('window.QRscanner from scan page',window.QRscanner);
+    // Make the webview transparent so the video preview is visible behind it.
+    window.QRScanner.show();
+    // Be sure to make any opaque HTML elements transparent here to avoid
+    // covering the video.    
+  }
+})
+
+
+/*
+* QR SCANNER PLUGIN CORDOVA
+* LECTURE CODE BAR and QR CODE
+*
+*/
+

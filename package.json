@@ -25,7 +25,8 @@
       "cordova-plugin-qrscanner": {},
       "phonegap-plugin-barcodescanner": {
         "ANDROID_SUPPORT_V4_VERSION": "27.+"
-      }
+      },
+      "cordova-plugin-qrscanner2": {}
     },
     "platforms": [
       "ios",
