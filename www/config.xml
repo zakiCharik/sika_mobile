@@ -51,6 +51,7 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <uses-permission android:name="android.permission.CAMERA" />
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>
@@ -62,4 +63,10 @@
     <engine name="ios" spec="^4.5.5" />
     <engine name="browser" spec="^5.0.4" />
     <engine name="android" spec="^7.1.4" />
+    <plugin name="cordova-plugin-ios-camera-permissions" spec="1.2.0">
+        <variable name="CAMERA_USAGE_DESCRIPTION" value="This app needs camera access" />
+        <variable name="MICROPHONE_USAGE_DESCRIPTION" value="This app needs microphone access" />
+        <variable name="PHOTOLIBRARY_ADD_USAGE_DESCRIPTION" value="This app needs write-access to photo library" />
+        <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="This app needs read/write-access photo library access" />
+    </plugin>
 </widget>
