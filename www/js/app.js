@@ -89,7 +89,7 @@ var showQrScanner = function(){
 // Option 2. Using live 'page:init' event handlers for each page
 $$(document).on('page:init', '.page[data-name="scan-page"]', function (e) {
 
-  document.addEventListener("deviceready", showQrScanner(), false);
+  document.addEventListener("deviceready", showQrScanner, false);
 
 
 });
