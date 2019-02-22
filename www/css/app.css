@@ -1,25 +1,4 @@
-.md .page {
-  background-color: #546e8d !important;
-  background: #546e8d !important;
-}
 
-.ios .page {
-  background-color: #546e8d !important;
-  background: #546e8d !important;
-}
-.md .navbar {
-  background-color: transparent !important;
-  background: transparent !important;
-}
-
-.ios .navbar {
-  background-color: transparent !important;
-  background: transparent !important;
-}
-
-.ios .navbar:after {
-  background-color: transparent !important;
-}
 
 @font-face {
   font-family: 'Material Icons';

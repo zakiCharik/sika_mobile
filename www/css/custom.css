@@ -59,9 +59,32 @@
     top: 0 !important; 
 }
 
+.ios .page {
+/*  background-color: #546e8d !important;
+  background: #546e8d !important;*/
+}
+.ios .navbar {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+.ios .navbar:after {
+  background-color: transparent !important;
+}
 
 
 /*material design*/
+
+.md .navbar {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+.md .page {
+/*  background-color: #546e8d !important;
+  background: #546e8d !important;*/
+}
+
 .md .list ul:after, .ios .list ul:before {
      height: 0px !important; 
 }

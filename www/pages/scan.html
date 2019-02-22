@@ -17,13 +17,16 @@
     html , body, #app, .page, .page-content {
         background: none !important;
     }    
+    #cordova-plugin-qrscanner-video-preview{
+      z-index: 100 !important;
+    }
   </style>
 </head>
 <body onload="">
   <div id="app">
     <div class="statusbar"></div>
     <div class="view view-main view-init ios-edges" data-url="/">
-      <div class="page no-toolbar no-navbar no-swipeback" style="z-index: 3000;background: none !important;"  data-name="scan-page">
+      <div class="page no-toolbar no-navbar no-swipeback"  data-name="scan-page">
 
         <div class="page-content">
             
