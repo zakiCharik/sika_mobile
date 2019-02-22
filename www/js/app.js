@@ -64,14 +64,8 @@ $$('._button-sign').on('click', function () {
 
 
 
-
-// Option 2. Using live 'page:init' event handlers for each page
-$$(document).on('page:init', '.page[data-name="scan-page"]', function (e) {
-
-
-
-  if (window.QRScanner !== undefined) {
-    console.log('window.QRscanner from scan page',window.QRscanner);
+var showQrScanner = function(){
+    alert('window.QRscanner from scan page ',window.QRscanner);
     // Make the webview transparent so the video preview is visible behind it.
     window.QRScanner.show();
     // Be sure to make any opaque HTML elements transparent here to avoid
@@ -90,9 +84,16 @@ $$(document).on('page:init', '.page[data-name="scan-page"]', function (e) {
         alert(text);
       }
     }
-     
-  }else{
-    alert('QRScanner undefined');
-  }
-})
+};
+
+// Option 2. Using live 'page:init' event handlers for each page
+$$(document).on('page:init', '.page[data-name="scan-page"]', function (e) {
+
+  document.addEventListener("deviceready", showQrScanner(), false);
+
+
+});
+
+
+
 
