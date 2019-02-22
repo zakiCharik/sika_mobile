@@ -112,14 +112,7 @@
 
         };
 
-        var scanCode = function(){
-
-          this.app.router.navigate('/scan/',
-            {
-              name: 'scan'
-            }
-          );
-
+        var barcodescanner =  function(){
            cordova.plugins.barcodeScanner.scan(
               function (result) {
                   alert("We got a barcode\n" +
@@ -144,7 +137,12 @@
                   disableSuccessBeep: false // iOS and Android
               }
            );          
-        }
+        };
+
+        var scanCode = function(){
+          setTimeout(barcodescanner(), 3000);         
+        };
+        
   </script>
 </body>
 </html>
