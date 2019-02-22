@@ -74,7 +74,7 @@ $$(document).on('page:init', '.page[data-name="scan-page"]', function (e) {
     // Be sure to make any opaque HTML elements transparent here to avoid
     // covering the video.    
 
-    
+
     // Start a scan. Scanning will continue until something is detected or
     // `QRScanner.cancelScan()` is called.
     window.QRScanner.scan(displayContents);
@@ -88,17 +88,8 @@ $$(document).on('page:init', '.page[data-name="scan-page"]', function (e) {
       }
     }
      
-    // Make the webview transparent so the video preview is visible behind it.
-    window.QRScanner.show();
-    // Be sure to make any opaque HTML elements transparent here to avoid
-    // covering the video.
+  }else{
+    alert('QRScanner undefined');
   }
 })
-
-
-/*
-* QR SCANNER PLUGIN CORDOVA
-* LECTURE CODE BAR and QR CODE
-*
-*/
 
