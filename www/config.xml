@@ -59,13 +59,12 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <preference name="android-minSdkVersion" value="16" />
-    <preference name="android-targetSdkVersion" value="22"/>
+    <preference name="android-targetSdkVersion" value="22" />
     <preference name="phonegap-version" value="cli-8.0.0" />
-    <plugin name="phonegap-plugin-barcodescanner" source="npm" spec="8.0.0"/>
-    <edit-config target="NSCameraUsageDescription" file="*-Info.plist" mode="merge">
-      <string>To scan barcodes</string>
+    <plugin name="phonegap-plugin-barcodescanner" source="npm" spec="8.0.0" />
+    <edit-config file="*-Info.plist" mode="merge" target="NSCameraUsageDescription">
+        <string>To scan barcodes</string>
     </edit-config>
-    <plugin name="cordova-plugin-qrscanner2" spec="2.6.0" />
     <plugin name="cordova-plugin-whitelist" spec="1.3.3" />
     <engine name="ios" spec="^4.5.5" />
     <engine name="browser" spec="^5.0.4" />
