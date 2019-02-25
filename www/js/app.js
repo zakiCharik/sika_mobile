@@ -73,7 +73,7 @@ var calculateScore = function(score){
   if (localStorage.getItem("LocalScore") == undefined) {
     localStorage.setItem("LocalScore", score);
   }else{
-    var actuel = localStorage.getItem("LocalScore");
+    var actuel = parseInt(localStorage.getItem("LocalScore"));
     parseInt(actuel) = parseInt(actuel) + parseInt(score);
     localStorage.setItem("LocalScore", actuel);
   }
@@ -130,7 +130,7 @@ $$(document).on('page:init', '.page[data-name="profil-index"]', function (e) {
   // _pts-score
 
   //get the score
-  var actuel = localStorage.getItem("LocalScore");
+  var actuel = parseInt(localStorage.getItem("LocalScore"));
   console.log('actuel score', actuel);
   $$('h1#_pts-score').text('');  
   $$('h1#_pts-score').text(actuel);  
