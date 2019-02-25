@@ -6,6 +6,7 @@ var theme = 'auto';
 if (document.location.search.indexOf('theme=') >= 0) {
   theme = document.location.search.split('theme=')[1].split('&')[0];
 }
+var listHistoriqueScan = Array();
 
 // Init App
 var app = new Framework7({
@@ -80,16 +81,20 @@ var calculateScore = function(score){
 // ----------------------------------------------------------------------------Save the scan history after scan code bar finish
 var saveHistory = function(arr){
   if (localStorage.getItem("HistoryScan") == undefined) {
-    var list = Array();
-    list.push(arr.split(';'));
-    localStorage.setItem("HistoryScan", list);
+    listHistoriqueScan.push({
+     'date' : arr.split(';')[3],
+     'score' : arr.split(';')[4],
+     'product' : arr.split(';')[2],
+    });
+    console.log(listHistoriqueScan);
+    localStorage.setItem("HistoryScan", listHistoriqueScan);
   }else{
-    var mylist = localStorage.getItem('HistoryScan');
-    console.log('mylist', mylist);
-    console.log('arr.split ', arr.split(';'));
-    console.log('JSON.parse(mylist)', JSON.parse(mylist));
-    JSON.parse(mylist).push(arr.split(';'));
-    localStorage.setItem("HistoryScan", mylist);
+    listHistoriqueScan.push({
+     'date' : arr.split(';')[3],
+     'score' : arr.split(';')[4],
+     'product' : arr.split(';')[2],
+    });
+    localStorage.setItem("HistoryScan", listHistoriqueScan);
   }
 }
 
@@ -169,10 +174,12 @@ $$(document).on('page:init', '.page[data-name="scan-history"]', function (e) {
   $$('ul#_list-history').text('');
 
   //get the score
-  var actuel = localStorage.getItem("HistoryScan") ;
-  console.log('History Scan',actuel );
   if (localStorage.getItem("HistoryScan") !== NaN) {
-      console.log('History Scan', actuel);
+
+    console.log(listHistoriqueScan);
+    listHistoriqueScan.forEach(function(item){
+      $$('ul#_list-history').append('<li class="item-content"> Date :'+item.date +' Score:' +item.score+' <br> PRODUCT ID : ' +item.product+'</li>');          
+    });
   }
 
   // $$('ul#_list-history').text(item);  
