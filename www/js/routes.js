@@ -23,6 +23,12 @@ var routes = [
     url: './pages/scan.html',
     name: 'scan',
   },
+  // history Scan page
+  {
+    path: '/historyscan/',
+    url: './pages/historyscan.html',
+    name: 'historyscan',
+  },
   // Right Panel pages
   {
     path: '/panel-right-1/',

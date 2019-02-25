@@ -60,33 +60,58 @@ $$('._button-sign').on('click', function () {
   var router = app.router;
   console.log($$('#sika-username-2').val());
   console.log($$('#sika-password-2').val());
-  
-
   mainView.router.load({url: 'index.html' , ignoreCache: true, reload: true }); 
   mainView.router.refreshPage();
 
 });
 
 
+// ----------------------------------------------------------------------------Save score after scan code bar 
 var calculateScore = function(score){
 
   if (localStorage.getItem("LocalScore") == undefined) {
     localStorage.setItem("LocalScore", parseInt(score));
   }else{
-    var actuel = parseInt(localStorage.getItem("LocalScore"));
-    parseInt(actuel) += parseInt(score);
-    localStorage.setItem("LocalScore", actuel);
+    var _actuel = 0;
+    _actuel = parseInt(localStorage.getItem("LocalScore"))+ parseInt(score);
+    localStorage.setItem("LocalScore", _actuel);
   }
-
+}
+// ----------------------------------------------------------------------------Save the scan history after scan code bar finish
+var saveHistory = function(arr){
+  if (localStorage.getItem("HistoryScan") == undefined) {
+    var list = Array();
+    list.push(arr.split(';'));
+    localStorage.setItem("HistoryScan", list);
+  }else{
+    var mylist = localStorage.getItem('HistoryScan');
+    console.log('mylist', mylist);
+    console.log('arr.split ', arr.split(';'));
+    console.log('JSON.parse(mylist)', JSON.parse(mylist));
+    JSON.parse(mylist).push(arr.split(';'));
+    localStorage.setItem("HistoryScan", mylist);
+  }
 }
 
+var getHistory = function(){
 
+  if (localStorage.getItem("HistoryScan") == undefined) {
+    return JSON.parse(null);
+  }else{
+    return JSON.parse(localStorage.getItem("HistoryScan"));
+  }
+}
+
+// ----------------------------------------------------------------------------Calling for the Scan and persisting data
 function onDeviceReady () {
   cordova.plugins.barcodeScanner.scan(
      function (result) {
         //split the text to parst and get the calculated score
         var res = result.text.split(";");
+        //persist score
         calculateScore(parseInt(res[4]));
+        //Persist history scan
+        saveHistory(result.text);
         //prompt
         alert("We got a barcode\n" +
                "APPLICATION NAME: " + res[0] + "\n" +
@@ -117,23 +142,40 @@ function onDeviceReady () {
 
 }
 
-// Option 2. Using live 'page:init' event handlers for each page
+// Using live 'page:init' event handlers for each page
 $$(document).on('page:init', '.page[data-name="scan-page"]', function (e) {
   setTimeout(function () {
           document.addEventListener('deviceready', onDeviceReady, false);
-  }, 2000); 
+  }, 1000); 
 });
 
 
-// Option 2. Using live 'page:init' event handlers for each page
+// Using live 'page:init' event handlers for each page
 $$(document).on('page:init', '.page[data-name="profil-index"]', function (e) {
   // _pts-score
-
+  $$('h1#_pts-score').text('');  
+  
   //get the score
   var actuel = parseInt(localStorage.getItem("LocalScore"));
   console.log('actuel score', actuel);
-  $$('h1#_pts-score').text('');  
+  //append the result to the view  
   $$('h1#_pts-score').text(actuel);  
+});
+
+
+// Using live 'page:init' event handlers for each page
+$$(document).on('page:init', '.page[data-name="scan-history"]', function (e) {
+  // _pts-score
+  $$('ul#_list-history').text('');
+
+  //get the score
+  var actuel = localStorage.getItem("HistoryScan") ;
+  console.log('History Scan',actuel );
+  if (localStorage.getItem("HistoryScan") !== NaN) {
+      console.log('History Scan', actuel);
+  }
+
+  // $$('ul#_list-history').text(item);  
 });
 
 
