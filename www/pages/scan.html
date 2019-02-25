@@ -33,7 +33,7 @@
   </style>
   <script>
       function onDeviceReady () {
-        alert('window.QRscanner from scan page ',window.QRscanner);
+        alert('SCAN PAGE ',cordova.plugins.barcodeScanner);
         cordova.plugins.barcodeScanner.scan(
           function(result){
             alert('SUCCESS SCAN');
@@ -73,7 +73,10 @@
 <body >
   <div id="app">
     <div class="statusbar"></div>
-    <div class="view view-main view-init ios-edges" data-url="/">
+    <div class="view view-main view-init ios-edges" data-url="/" style="
+      background: none transparent !important;
+      background-color: transparent !important;
+      opacity: 0.1;">
       <div class="page no-toolbar no-navbar no-swipeback"  data-name="scan-page">
 
         <div class="page-content">
