@@ -9,28 +9,29 @@
     </author>
     <content src="pages/scan.html" />
     <preference name="DisallowOverscroll" value="true" />
+    <preference name="backgroundColor" value="0x00000000" />
     <preference name="StatusBarBackgroundColor" value="546e8d" />
     <preference name="AndroidPersistentFileLocation" value="Compatibility" />
     <preference name="android-build-tool" value="gradle" />
     <platform name="android">
-        <icon density="ldpi" src="icons/android-icon-144x144.png" />
-        <icon density="mdpi" src="icons/android-icon-144x144.png" />
-        <icon density="hdpi" src="icons/android-icon-144x144.png" />
-        <icon density="xhdpi" src="icons/android-icon-144x144.png" />
+        <icon density="ldpi" src="icons/android-icon-192x192.png" />
+        <icon density="mdpi" src="icons/android-icon-192x192.png" />
+        <icon density="hdpi" src="icons/android-icon-192x192.png" />
+        <icon density="xhdpi" src="icons/android-icon-192x192.png" />
         <icon density="xxhdpi" src="icons/android-icon-72x72.png" />
         <icon density="xxxhdpi" src="icons/android-icon-72x72.png" />
-        <splash density="land-ldpi" src="icons/android-icon-144x144.png" />
-        <splash density="land-mdpi" src="icons/android-icon-144x144.png" />
-        <splash density="land-hdpi" src="icons/android-icon-144x144.png" />
-        <splash density="land-xhdpi" src="icons/android-icon-144x144.png" />
-        <splash density="land-xxhdpi" src="icons/android-icon-144x144.png" />
-        <splash density="land-xxxhdpi" src="icons/android-icon-144x144.png" />
-        <splash density="port-ldpi" src="icons/android-icon-144x144.png" />
-        <splash density="port-mdpi" src="icons/android-icon-144x144.png" />
-        <splash density="port-hdpi" src="icons/android-icon-144x144.png" />
-        <splash density="port-xhdpi" src="icons/android-icon-144x144.png" />
-        <splash density="port-xxhdpi" src="icons/android-icon-144x144.png" />
-        <splash density="port-xxxhdpi" src="icons/android-icon-144x144.png" />
+        <splash density="land-ldpi" src="icons/android-icon-192x192.png" />
+        <splash density="land-mdpi" src="icons/android-icon-192x192.png" />
+        <splash density="land-hdpi" src="icons/android-icon-192x192.png" />
+        <splash density="land-xhdpi" src="icons/android-icon-192x192.png" />
+        <splash density="land-xxhdpi" src="icons/android-icon-192x192.png" />
+        <splash density="land-xxxhdpi" src="icons/android-icon-192x192.png" />
+        <splash density="port-ldpi" src="icons/android-icon-192x192.png" />
+        <splash density="port-mdpi" src="icons/android-icon-192x192.png" />
+        <splash density="port-hdpi" src="icons/android-icon-192x192.png" />
+        <splash density="port-xhdpi" src="icons/android-icon-192x192.png" />
+        <splash density="port-xxhdpi" src="icons/android-icon-192x192.png" />
+        <splash density="port-xxxhdpi" src="icons/android-icon-192x192.png" />
     </platform>
     <platform name="ios">
         <icon height="180" platform="ios" src="icons/apple-icon-180x180.png" width="180" />
@@ -40,7 +41,7 @@
         <icon height="114" platform="ios" src="icons/apple-icon-114x114.png" width="114" />
         <icon height="76" platform="ios" src="icons/apple-icon-76x76.png" width="76" />
         <icon height="72" platform="ios" src="icons/apple-icon-72x72.png" width="72" />
-        <icon height="60" platform="ios" src="icons/apple-icon-60x60.png" width="60" />
+        <icon height="60" platform="ios" src="icons/apple-icon.png" width="60" />
         <icon height="57" platform="ios" src="icons/apple-icon-57x57.png" width="57" />
     </platform>
     <access origin="*" />

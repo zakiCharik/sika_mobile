@@ -17,7 +17,7 @@
   <link rel="icon" href="../img/f7-icon.png">
   <link rel="stylesheet" href="../css/custom.css">
   <style type="text/css">
-    html , body, #app, .page, .page-content {
+    html , body, #app, .page, .page-content, *{
       background: none transparent !important;
       background-color: transparent !important;
     }    
@@ -33,7 +33,7 @@
   </style>
   <script>
       function onDeviceReady () {
-        alert('SCAN PAGE ',cordova.plugins.barcodeScanner);
+        alert('SCAN PAGE ');
         cordova.plugins.barcodeScanner.scan(
           function(result){
             alert('SUCCESS SCAN');
