@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#2196f3">
 <!--   <meta http-equiv="Content-Security-Policy" content="default-src *; child-src * 'self' blob: http:; img-src * 'self' data: http:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src 'self' 'unsafe-inline' *">
  -->  
-  <meta http-equiv="Content-Security-Policy" content=" media-src * blob: polyblob:">
+  <meta http-equiv="Content-Security-Policy" content="default-src *; child-src * 'self' blob: polyblob: http:; img-src * 'self' data: http:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src 'self' 'unsafe-inline' *; media-src * blob: polyblob:">
 
   <title>SIKA - Rewarding Loyalty Mobile application</title>
   <link rel="stylesheet" href=".././lib/css/framework7.css">
@@ -17,88 +17,29 @@
   <link rel="icon" href="../img/f7-icon.png">
   <link rel="stylesheet" href="../css/custom.css">
   <style type="text/css">
-    html , body, #app, .page, .page-content, *{
+/*    html , body, #app, .page, .page-content, *{
       background: none transparent !important;
       background-color: transparent !important;
     }    
     #cordova-plugin-qrscanner-video-preview{
-/*      z-index: 100 !important;*/
+      z-index: 100 !important;
       min-height: auto !important;
       min-width: auto !important;
       background-color: #8080803d !important;
     }
     #cordova-plugin-qrscanner-still{
-/*      z-index: 99 !important;*/
-    }
+      z-index: 99 !important;
+    }*/
   </style>
   <script>
-      window.onerror = function(error, file, line) {
-        alert(error + ", " + file + ", " + line);
-      }
-    
-      function onDeviceReady () {
-        alert('SCAN PAGE ');
-        cordova.plugins.barcodeScanner.scan(
-           function (result) {
-               alert("We got a barcode\n" +
-                     "Result: " + result.text + "\n" +
-                     "Format: " + result.format + "\n" +
-                     "Cancelled: " + result.cancelled);
-           }, 
-           function (error) {
-               alert("Scanning failed: " + error);
-           },
-           {
-               "preferFrontCamera" : true, // iOS and Android
-               "showFlipCameraButton" : true, // iOS and Android
-               "prompt" : "Place a barcode inside the scan area", // supported on Android only
-               "formats" : "QR_CODE,PDF_417", // default: all but PDF_417 and RSS_EXPANDED
-               "orientation" : "landscape" // Android only (portrait|landscape), default unset so it rotates with the device
-           }
-        );
-        // cordova.plugins.barcodeScanner.scan(
-        //   function(result){
-        //     alert('SUCCESS SCAN');
-        //     alert(result);
-        //     if(!result.cancelled)
-        //     {
-        //         if(result.format == "QR_CODE")
-        //         {
-        //             navigator.notification.prompt("Please enter name of data",  function(input){
-        //                 var name = input.input1;
-        //                 var value = result.text;
 
-        //                 var data = localStorage.getItem("LocalData");
-        //                 console.log(data);
-        //                 data = JSON.parse(data);
-        //                 data[data.length] = [name, value];
 
-        //                 localStorage.setItem("LocalData", JSON.stringify(data));
-
-        //                 alert("Done");
-        //             });
-        //         }
-        //     }        
-        //   }, 
-        //   function(err){
-        //     alert('ERROR SCAN');
-        //     alert(err)
-        //   } 
-        // );
-      }
-
-      setTimeout(function () {
-              document.addEventListener('deviceready', onDeviceReady, false);
-      }, 9000);
   </script>  
 </head>
 <body >
   <div id="app">
     <div class="statusbar"></div>
-    <div class="view view-main view-init ios-edges" data-url="/" style="
-      background: none transparent !important;
-      background-color: transparent !important;
-      opacity: 0.1;">
+    <div class="view view-main view-init ios-edges" data-url="/" >
       <div class="page no-toolbar no-navbar no-swipeback"  data-name="scan-page">
 
         <div class="page-content">
@@ -114,10 +55,6 @@
   <script src=".././lib/js/framework7.js"></script>
   <script src="../js/routes.js"></script>
   <script src="../js/app.js"></script>
-  <script type="text/javascript">
-    
 
-    
-  </script>
 </body> 
 </html>

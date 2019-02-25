@@ -40,6 +40,11 @@ var app = new Framework7({
     // placementId: 'pltd4o7ibb9rc653x14',
   },
 });
+//detect error window
+window.onerror = function(error, file, line) {
+  alert(error + ", " + file + ", " + line);
+}
+
 
 // Init/Create main view
 var mainView = app.views.create('.view-main', {
@@ -63,7 +68,19 @@ $$('._button-sign').on('click', function () {
 });
 
 
+var calculateScore = function(){
+  localStorage.getItem("LocalScore");
+    var name = input.input1;
+    var value = result.text;
 
+    var data = localStorage.getItem("LocalScore");
+    console.log(data);
+    data = JSON.parse(data);
+    data[data.length] = [name, value];
+
+    localStorage.setItem("LocalData", JSON.stringify(data));
+
+}
 var showQrScanner = function(){
     // alert('window.QRscanner from scan page ',window.QRscanner);
     // cordova.plugins.barcodeScanner.scan(

@@ -7,7 +7,7 @@
     <author email="zakaria@line.ma" href="http://cordova.io">
        LINE INTERACTIVE
     </author>
-    <content src="pages/scan.html" />
+    <content src="login.html" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="backgroundColor" value="0x00000000" />
     <preference name="StatusBarBackgroundColor" value="546e8d" />
