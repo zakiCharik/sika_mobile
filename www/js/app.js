@@ -131,6 +131,7 @@ $$(document).on('page:init', '.page[data-name="profil-index"]', function (e) {
 
   //get the score
   var actuel = localStorage.getItem("LocalScore");
+  console.log('actuel score', actuel);
   $$('h1#_pts-score').text('');  
   $$('h1#_pts-score').text(actuel);  
 });
