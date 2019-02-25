@@ -59,8 +59,8 @@
     </platform>
     <plugin name="phonegap-plugin-barcodescanner" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
+    <plugin name="cordova-plugin-qrscanner2" spec="^2.6.5" />
     <engine name="ios" spec="^4.5.5" />
     <engine name="browser" spec="^5.0.4" />
     <engine name="android" spec="^7.1.4" />
-    <plugin name="cordova-plugin-qrscanner2" spec="^2.6.5" />
 </widget>
