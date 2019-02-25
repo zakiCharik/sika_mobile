@@ -81,93 +81,37 @@ var calculateScore = function(){
     localStorage.setItem("LocalData", JSON.stringify(data));
 
 }
-var showQrScanner = function(){
-    // alert('window.QRscanner from scan page ',window.QRscanner);
-    // cordova.plugins.barcodeScanner.scan(
-    //   function(result){
-    //     alert('SUCCESS SCAN');
-    //     alert(result);
-    //     if(!result.cancelled)
-    //     {
-    //         if(result.format == "QR_CODE")
-    //         {
-    //             navigator.notification.prompt("Please enter name of data",  function(input){
-    //                 var name = input.input1;
-    //                 var value = result.text;
-
-    //                 var data = localStorage.getItem("LocalData");
-    //                 console.log(data);
-    //                 data = JSON.parse(data);
-    //                 data[data.length] = [name, value];
-
-    //                 localStorage.setItem("LocalData", JSON.stringify(data));
-
-    //                 alert("Done");
-    //             });
-    //         }
-    //     }        
-    //   }, 
-    //   function(err){
-    //     alert('ERROR SCAN');
-    //     alert(err)
-    //   } 
-    // );
-
-  // For the best user experience, make sure the user is ready to give your app
-  // camera access before you show the prompt. On iOS, you only get one chance.
-
-  // window.QRScanner.prepare(onDone); // show the prompt
-
-  // function onDone(err, status){
-  //   if (err) {
-  //    // here we can handle errors and clean up any loose ends.
-  //    console.error(err);
-  //   }
-  //   if (status.authorized) {
-    
-  //       // Make the webview transparent so the video preview is visible behind it.
-  //       window.QRScanner.show();
-  //       // Be sure to make any opaque HTML elements transparent here to avoid
-  //       // covering the video.    
 
 
-  //       // Start a scan. Scanning will continue until something is detected or
-  //       // `QRScanner.cancelScan()` is called.
-  //       window.QRScanner.scan(displayContents);
-         
-  //       function displayContents(err, text){
-  //         if(err){
-  //           // an error occurred, or the scan was canceled (error code `6`)
-  //         } else {
-  //           // The scan completed, display the contents of the QR code:
-  //           alert(text);
-  //         }
-  //       }
+function onDeviceReady () {
+  cordova.plugins.barcodeScanner.scan(
+     function (result) {
+         alert("We got a barcode\n" +
+               "Result: " + result.text + "\n" +
+               "Format: " + result.format + "\n" +
+               "Cancelled: " + result.cancelled);
+     }, 
+     function (error) {
+         alert("Scanning failed: " + error);
+     },
+     {
+         "preferFrontCamera" : false, // iOS and Android
+         "showFlipCameraButton" : true, // iOS and Android
+         "prompt" : "Aim for the QR IMAGE", // supported on Android only
+         "formats" : "QR_CODE,PDF_417", // default: all but PDF_417 and RSS_EXPANDED
+         "orientation" : "portrait" // Android only (portrait|landscape), default unset so it rotates with the device
+     }
+  );
 
-  //   } else if (status.denied) {
-  //    // The video preview will remain black, and scanning is disabled. We can
-  //    // try to ask the user to change their mind, but we'll have to send them
-  //    // to their device settings with `QRScanner.openSettings()`.
-  //   } else {
-  //     // we didn't get permission, but we didn't get permanently denied. (On
-  //     // Android, a denial isn't permanent unless the user checks the "Don't
-  //     // ask again" box.) We can ask again at the next relevant opportunity.
-  //   }
-  // }
-
-
-};
-
+}
 
 // Option 2. Using live 'page:init' event handlers for each page
 $$(document).on('page:init', '.page[data-name="scan-page"]', function (e) {
-
-
-  document.addEventListener("deviceready", showQrScanner, false);
-
-
+  setTimeout(function () {
+          document.addEventListener('deviceready', onDeviceReady, false);
+  }, 2000); 
 });
 
 
 
-
+  

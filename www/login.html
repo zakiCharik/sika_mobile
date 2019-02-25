@@ -27,7 +27,7 @@
     }*/
   </style>
 </head>
-<body style="background-color: transparent !important;">
+<body >
   <div id="app">
     <div class="statusbar"></div>
     <div class="view view-main" data-url="/login">
@@ -111,33 +111,7 @@
           );
 
         };
-
-      function onDeviceReady () {
-        alert('SCAN PAGE ');
-        cordova.plugins.barcodeScanner.scan(
-           function (result) {
-               alert("We got a barcode\n" +
-                     "Result: " + result.text + "\n" +
-                     "Format: " + result.format + "\n" +
-                     "Cancelled: " + result.cancelled);
-           }, 
-           function (error) {
-               alert("Scanning failed: " + error);
-           },
-           {
-               "preferFrontCamera" : false, // iOS and Android
-               "showFlipCameraButton" : true, // iOS and Android
-               "prompt" : "Aim for the QR IMAGE", // supported on Android only
-               "formats" : "QR_CODE,PDF_417", // default: all but PDF_417 and RSS_EXPANDED
-               "orientation" : "portrait" // Android only (portrait|landscape), default unset so it rotates with the device
-           }
-        );
-
-      }
-
-      setTimeout(function () {
-              document.addEventListener('deviceready', onDeviceReady, false);
-      }, 2000);        
+     
   </script>
 </body>
 </html>

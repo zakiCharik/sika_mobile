@@ -60,10 +60,8 @@
 }
 
 .ios .page {
-/*  background-color: #546e8d !important;
-  background: #546e8d !important;*/
-    background: none transparent !important;
-    background-color: transparent !important;
+  background-color: #546e8d !important;
+  background: #546e8d !important;
 }
 .ios .navbar {
   background-color: transparent !important;
@@ -83,10 +81,8 @@
 }
 
 .md .page {
-/*  background-color: #546e8d !important;
-  background: #546e8d !important;*/
-    background: none transparent !important;
-    background-color: transparent !important;
+  background-color: #546e8d !important;
+  background: #546e8d !important;
 }
 
 .md .list ul:after, .ios .list ul:before {
@@ -133,6 +129,12 @@
     color: white;
     background-color: #4ab5ae !important;
 }
+
+.login-screen-content{
+  background-color: #546e8d !important;
+  background: #546e8d !important;
+}
+
 .input-addon-button {
     background-color: #4ab5ae !important;
     width: 46px;
