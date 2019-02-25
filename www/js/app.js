@@ -65,36 +65,36 @@ $$('._button-sign').on('click', function () {
 
 
 var showQrScanner = function(){
-    alert('window.QRscanner from scan page ',window.QRscanner);
-    cordova.plugins.barcodeScanner.scan(
-      function(result){
-        alert('SUCCESS SCAN');
-        alert(result);
-        if(!result.cancelled)
-        {
-            if(result.format == "QR_CODE")
-            {
-                navigator.notification.prompt("Please enter name of data",  function(input){
-                    var name = input.input1;
-                    var value = result.text;
+    // alert('window.QRscanner from scan page ',window.QRscanner);
+    // cordova.plugins.barcodeScanner.scan(
+    //   function(result){
+    //     alert('SUCCESS SCAN');
+    //     alert(result);
+    //     if(!result.cancelled)
+    //     {
+    //         if(result.format == "QR_CODE")
+    //         {
+    //             navigator.notification.prompt("Please enter name of data",  function(input){
+    //                 var name = input.input1;
+    //                 var value = result.text;
 
-                    var data = localStorage.getItem("LocalData");
-                    console.log(data);
-                    data = JSON.parse(data);
-                    data[data.length] = [name, value];
+    //                 var data = localStorage.getItem("LocalData");
+    //                 console.log(data);
+    //                 data = JSON.parse(data);
+    //                 data[data.length] = [name, value];
 
-                    localStorage.setItem("LocalData", JSON.stringify(data));
+    //                 localStorage.setItem("LocalData", JSON.stringify(data));
 
-                    alert("Done");
-                });
-            }
-        }        
-      }, 
-      function(err){
-        alert('ERROR SCAN');
-        alert(err)
-      } 
-    );
+    //                 alert("Done");
+    //             });
+    //         }
+    //     }        
+    //   }, 
+    //   function(err){
+    //     alert('ERROR SCAN');
+    //     alert(err)
+    //   } 
+    // );
 
   // For the best user experience, make sure the user is ready to give your app
   // camera access before you show the prompt. On iOS, you only get one chance.
