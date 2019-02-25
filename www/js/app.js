@@ -71,10 +71,10 @@ $$('._button-sign').on('click', function () {
 var calculateScore = function(score){
 
   if (localStorage.getItem("LocalScore") == undefined) {
-    localStorage.setItem("LocalScore", score);
+    localStorage.setItem("LocalScore", parseInt(score));
   }else{
     var actuel = parseInt(localStorage.getItem("LocalScore"));
-    parseInt(actuel) = parseInt(actuel) + parseInt(score);
+    parseInt(actuel) += parseInt(score);
     localStorage.setItem("LocalScore", actuel);
   }
 
@@ -86,7 +86,7 @@ function onDeviceReady () {
      function (result) {
         //split the text to parst and get the calculated score
         var res = result.text.split(";");
-        calculateScore(res[4]);
+        calculateScore(parseInt(res[4]));
         //prompt
         alert("We got a barcode\n" +
                "APPLICATION NAME: " + res[0] + "\n" +
