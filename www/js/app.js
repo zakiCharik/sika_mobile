@@ -68,17 +68,15 @@ $$('._button-sign').on('click', function () {
 });
 
 
-var calculateScore = function(){
-  localStorage.getItem("LocalScore");
-    var name = input.input1;
-    var value = result.text;
+var calculateScore = function(score){
 
-    var data = localStorage.getItem("LocalScore");
-    console.log(data);
-    data = JSON.parse(data);
-    data[data.length] = [name, value];
-
-    localStorage.setItem("LocalData", JSON.stringify(data));
+  if (localStorage.getItem("LocalScore") == undefined) {
+    localStorage.setItem("LocalScore", score);
+  }else{
+    var actuel = localStorage.getItem("LocalScore");
+    parseInt(actuel) = parseInt(actuel) + parseInt(score);
+    localStorage.setItem("LocalScore", actuel);
+  }
 
 }
 
@@ -86,10 +84,24 @@ var calculateScore = function(){
 function onDeviceReady () {
   cordova.plugins.barcodeScanner.scan(
      function (result) {
-         alert("We got a barcode\n" +
-               "Result: " + result.text + "\n" +
+        //split the text to parst and get the calculated score
+        var res = result.text.split(";");
+        calculateScore(res[4]);
+        //prompt
+        alert("We got a barcode\n" +
+               "APPLICATION NAME: " + res[0] + "\n" +
+               "TYPE: " + res[1] + "\n" +
+               "PRODUCT ID: " + res[2] + "\n" +
+               "SCAN DATE: " + res[3] + "\n" +
+               "SCAN SCORE: " + res[4] + "\n" +
                "Format: " + result.format + "\n" +
                "Cancelled: " + result.cancelled);
+
+        this.app.router.navigate('/',
+          {
+            name: 'homepage'
+          }
+        );
      }, 
      function (error) {
          alert("Scanning failed: " + error);
@@ -110,6 +122,17 @@ $$(document).on('page:init', '.page[data-name="scan-page"]', function (e) {
   setTimeout(function () {
           document.addEventListener('deviceready', onDeviceReady, false);
   }, 2000); 
+});
+
+
+// Option 2. Using live 'page:init' event handlers for each page
+$$(document).on('page:init', '.page[data-name="profil-index"]', function (e) {
+  // _pts-score
+
+  //get the score
+  var actuel = localStorage.getItem("LocalScore");
+  $$('h1#_pts-score').text('');  
+  $$('h1#_pts-score').text(actuel);  
 });
 
 
