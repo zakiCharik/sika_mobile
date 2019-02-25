@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#2196f3">
 <!--   <meta http-equiv="Content-Security-Policy" content="default-src *; child-src * 'self' blob: http:; img-src * 'self' data: http:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src 'self' 'unsafe-inline' *">
  -->  
-  <meta http-equiv="Content-Security-Policy" content="default-src *; child-src * 'self' blob: polyblob: http:; img-src * 'self' data: http:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src 'self' 'unsafe-inline' *; media-src * blob: polyblob:">
+  <meta http-equiv="Content-Security-Policy" content=" media-src * blob: polyblob:">
 
   <title>SIKA - Rewarding Loyalty Mobile application</title>
   <link rel="stylesheet" href=".././lib/css/framework7.css">
@@ -32,6 +32,10 @@
     }
   </style>
   <script>
+      window.onerror = function(error, file, line) {
+        alert(error + ", " + file + ", " + line);
+      }
+    
       function onDeviceReady () {
         alert('SCAN PAGE ');
         cordova.plugins.barcodeScanner.scan(
